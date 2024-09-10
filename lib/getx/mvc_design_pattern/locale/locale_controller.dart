@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-// Change languages and translations
+// Preparing the content of the app to be available in different languages (translations)
 class LocaleController implements Translations {
   @override
   Map<String, Map<String, String>> get keys => {
