@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_management/getx/route_management/pageone.dart';
 import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
@@ -23,13 +24,13 @@ class _HomeState extends State<Home> {
               child: MaterialButton(
                 onPressed: () {
                   // equal to  Navigator.push(context,MaterialPageRoute(builder: (context) => const PageOne()));
-                  //Get.to(PageOne());
+                  Get.to(() => const PageOne());
 
                   // equal to  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PageOne()));
                   // Get.off(PageOne());
 
                   // named route
-                  Get.toNamed("/pageone");
+                  //Get.toNamed("/pageone");
                 },
                 child: const Text('To Page One'),
               ),

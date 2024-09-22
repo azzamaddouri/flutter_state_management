@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             // Rebuild of the widget
             // BlocBuilder<CounterBloc, CounterState>(
-            //   builder: (BuildContext context, state) {
+            //   builder: (context, state) {
             //     return Text(
             //       '${state.counterValue}',
             //       style: const TextStyle(
@@ -37,28 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
             //     );
             //   },
             // ),
-            // Listens to the state and based on the state I apply something like ---> Show Snackbar or Dialog
-            // BlocListener<CounterBloc, CounterState>(
-            //   listener: (BuildContext context, state) {
-            //     if (state is CounterIncrementState) {
-            //       log("State is CounterIncrementState");
-            //     } else if (state is CounterDecrementState) {
-            //       log("State is CounterDecrementState");
-            //     }
-            //   },
-            //   child: BlocBuilder<CounterBloc, CounterState>(
-            //     builder: (BuildContext context, state) {
-            //       return Text(
-            //         '${state.counterValue}',
-            //         style: const TextStyle(
-            //             fontSize: 48, fontWeight: FontWeight.bold),
-            //       );
-            //     },
-            //   ),
-            // ),
+            // Perform side effects in response to state changes like ---> Show Snackbar or Dialog
+            BlocListener<CounterBloc, CounterState>(
+              listener: (context, state) {
+                if (state is CounterIncrementState) {
+                  log("State is CounterIncrementState");
+                } else if (state is CounterDecrementState) {
+                  log("State is CounterDecrementState");
+                }
+              },
+              child: BlocBuilder<CounterBloc, CounterState>(
+                builder: (context, state) {
+                  log("rebuid");
+                  return Text(
+                    '${state.counterValue}',
+                    style: const TextStyle(
+                        fontSize: 48, fontWeight: FontWeight.bold),
+                  );
+                },
+              ),
+            ),
             //  Combination of BlocListner + BlocBuilder
-            BlocConsumer<CounterBloc, CounterState>(
-              listener: (BuildContext context, state) {
+            /*  BlocConsumer<CounterBloc, CounterState>(
+              listener: (context, state) {
                 if (state is CounterIncrementState) {
                   log("State is CounterIncrementState");
                 } else if (state is CounterDecrementState) {
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 48, fontWeight: FontWeight.bold),
                 );
               },
-            ),
+            ), */
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

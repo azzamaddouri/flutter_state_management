@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ChangenotifierExample extends StatefulWidget {
-  const ChangenotifierExample({super.key});
+class ChangeNotifierProviderExample extends StatefulWidget {
+  const ChangeNotifierProviderExample({super.key});
 
   @override
-  State<ChangenotifierExample> createState() => _ChangenotifierExampleState();
+  State<ChangeNotifierProviderExample> createState() =>
+      _ChangeNotifierProviderExampleState();
 }
 
-class _ChangenotifierExampleState extends State<ChangenotifierExample> {
+class _ChangeNotifierProviderExampleState
+    extends State<ChangeNotifierProviderExample> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -40,7 +42,7 @@ class Model extends ChangeNotifier {
   String name = "welcome";
   changeName() {
     name = "Weal";
-    // Similar to setState() -> rebuild consumer which listens to the same class 
+    // Similar to setState() -> rebuild consumer which listens to the same class
     notifyListeners();
   }
 }

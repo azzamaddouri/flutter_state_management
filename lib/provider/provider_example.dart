@@ -26,9 +26,9 @@ class WidgetChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Similar to context.read<Model>().name
+    // Similar to context.read<Model>()
     //var model = Provider.of<Model>(context, listen: false);
-    // Similar to context.watch<Model>().name
+    // Similar to context.watch<Model>()
     // var model1 = Provider.of<Model>(context, listen: true);
 
     return Column(

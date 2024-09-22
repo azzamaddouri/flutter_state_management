@@ -24,8 +24,8 @@ class _PageTwoState extends State<PageTwo> {
               child: MaterialButton(
                 onPressed: () {
                   //Get.to(PageOne());
-                  // equal to --> Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const PageOne()),(Route<dynamic> route) => false,);
 
+                  // equal to --> Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const PageOne()),(Route<dynamic> route) => false,);
                   Get.offAll(const PageOne());
                 },
                 child: const Text(' To page One'),
@@ -34,7 +34,7 @@ class _PageTwoState extends State<PageTwo> {
             Center(
               child: MaterialButton(
                 onPressed: () {
-                  // equal to --> Navigator.of(context).pop();
+                  // equal to --> Navigator.of(context).maybePop();
                   Get.back();
                 },
                 child: const Text('Back'),

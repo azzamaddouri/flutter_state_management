@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-// Business Logic
+// Gets refreshed whenever you visit a new page, and when you leave that page, the controller gets disposed
 class HomeController extends GetxController {
   // Using GetBuilder
 /*   int counter = 0;

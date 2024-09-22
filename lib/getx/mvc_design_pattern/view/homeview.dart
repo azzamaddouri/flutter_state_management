@@ -31,7 +31,6 @@ class _HomeViewState extends State<HomeView> {
               'Counter value:',
               style: TextStyle(fontSize: 24),
             ),
-            // Similar to the consumer
             /* GetBuilder */ /* GetX<HomeController> */ Obx(
               () =>
                   //init: HomeController(),
@@ -82,14 +81,15 @@ class _HomeViewState extends State<HomeView> {
 }
 
 // State Management
-// GetBuilder --> based on update to rebuild ( not reactive ) // Similar to the funtionality of consumer
-// Getx  --> based on stream (memory + slow) ( reactive ) // Similar to Selector
-// Obs --> based on stream (memory + slow) ( reactive )
+// 1- GetBuilder --> based on update to rebuild ( not reactive ) // Similar to the funtionality of consumer
+// 2- Getx  --> based on stream (memory + slow) ( reactive ) // Similar to Selector
+// 3- Obx --> based on stream (memory + slow) ( reactive )
 
 // DI
 // Design Pattern allows objects to be passed as arguments to other objects
+// 1- Get.put() / Get.lazyPut() --> View
+// 2- Bindings --> Seperate Class 
 
-// Bindings
 
 class Themes {
   static ThemeData customDarkTheme = ThemeData.dark()
